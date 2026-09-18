@@ -1,0 +1,273 @@
+/* =====================================================================
+   App.css
+   Plain, hand-written CSS -- no Bootstrap, no Tailwind, no frameworks.
+
+   Design tokens are kept as CSS custom properties at the top so
+   students can see, and change, the whole look from one place.
+   ===================================================================== */
+
+   :root {
+    --color-bg: #f5f5fb;
+    --color-surface: #ffffff;
+    --color-border: #e3e3ee;
+    --color-text: #1f2233;
+    --color-text-muted: #6b7280;
+  
+    --color-accent: #4f46e5;
+    --color-accent-dark: #4338ca;
+  
+    --color-edit: #d97706;
+    --color-edit-dark: #b45309;
+    --color-delete: #dc2626;
+    --color-delete-dark: #b91c1c;
+  
+    --color-pill-bg: #eef0ff;
+    --color-pill-text: #4338ca;
+    --color-pill-alt-bg: #e6f7f1;
+    --color-pill-alt-text: #0f766e;
+  
+    --radius-card: 14px;
+    --radius-field: 8px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  
+  .page {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 32px 24px 64px;
+  }
+  
+  /* ---------------------------- Header ---------------------------- */
+  
+  .page-header h1 {
+    margin: 0 0 4px;
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  
+  .page-header p {
+    margin: 0 0 24px;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+  
+  .status-banner {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+    padding: 10px 16px;
+    border-radius: var(--radius-field);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+  }
+  
+  /* ---------------------------- Layout ---------------------------- */
+  
+  .layout {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+  
+  @media (max-width: 800px) {
+    .layout {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  .card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-card);
+    padding: 24px;
+  }
+  
+  .card h2 {
+    margin: 0 0 18px;
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+  
+  /* ---------------------------- Form ---------------------------- */
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  
+  .field {
+    margin-bottom: 14px;
+  }
+  
+  .field label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+  }
+  
+  .field input,
+  .field select,
+  .field textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-field);
+    font-size: 0.95rem;
+    font-family: inherit;
+    color: var(--color-text);
+    background: var(--color-surface);
+  }
+  
+  .field input:focus,
+  .field select:focus,
+  .field textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+  }
+  
+  .field textarea {
+    resize: vertical;
+  }
+  
+  .form-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  
+  /* ---------------------------- Buttons ---------------------------- */
+  
+  .btn {
+    border: none;
+    border-radius: var(--radius-field);
+    padding: 10px 18px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background: var(--color-accent);
+    color: #ffffff;
+    flex: 1;
+  }
+  
+  .btn-primary:hover {
+    background: var(--color-accent-dark);
+  }
+  
+  .btn-ghost {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+  }
+  
+  .btn-ghost:hover {
+    background: var(--color-bg);
+  }
+  
+  /* ---------------------------- Directory ---------------------------- */
+  
+  .empty-state {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+  }
+  
+  .student-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .student-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px;
+    align-items: start;
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-field);
+  }
+  
+  .student-id {
+    font-weight: 700;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    padding-top: 2px;
+  }
+  
+  .student-info h3 {
+    margin: 0 0 6px;
+    font-size: 1.02rem;
+    font-weight: 600;
+  }
+  
+  .student-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+  }
+  
+  .pill {
+    background: var(--color-pill-bg);
+    color: var(--color-pill-text);
+    padding: 2px 10px;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+  }
+  
+  .pill-alt {
+    background: var(--color-pill-alt-bg);
+    color: var(--color-pill-alt-text);
+  }
+  
+  .student-address {
+    margin: 4px 0 0;
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+  }
+  
+  .student-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .btn-edit {
+    background: #fef3e2;
+    color: var(--color-edit-dark);
+  }
+  
+  .btn-edit:hover {
+    background: #fde8c8;
+  }
+  
+  .btn-delete {
+    background: #fee2e2;
+    color: var(--color-delete-dark);
+  }
+  
+  .btn-delete:hover {
+    background: #fecaca;
+  }
+  
