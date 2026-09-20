@@ -3,8 +3,8 @@ import mysql.connector
 # MySQL database details
 DB_HOST = "localhost"
 DB_USER = "root"
-DB_PASSWORD = "your_password"
-DB_NAME = "student_admission"
+DB_PASSWORD = "kalyani@14#"
+DB_NAME = "student_admissions"
 
 
 def get_connection():
